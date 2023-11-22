@@ -1,0 +1,21 @@
+// ChatApp.js
+
+import React, { useState } from 'react';
+import ChatBox from './ChatBox';
+
+const ChatApp = () => {
+  const [messages, setMessages] = useState([]);
+
+  const handleSendMessage = (newMessage) => {
+    setMessages([...messages, newMessage]);
+  };
+
+  return (
+    <div>
+      <h1>React Chat App</h1>
+      <ChatBox messages={messages} onSendMessage={handleSendMessage} />
+    </div>
+  );
+};
+
+export default ChatApp;
